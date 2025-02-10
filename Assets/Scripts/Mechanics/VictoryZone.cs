@@ -1,11 +1,10 @@
-using Platformer.Gameplay;
 using UnityEngine;
-using static Platformer.Core.Simulation;
 
 namespace Platformer.Mechanics
 {
     /// <summary>
     /// Marks a trigger as a VictoryZone, usually used to end the current game level.
+    /// Instead of triggering a win animation, it moves the player to a specific position.
     /// </summary>
     public class VictoryZone : MonoBehaviour
     {
@@ -14,8 +13,8 @@ namespace Platformer.Mechanics
             var p = collider.gameObject.GetComponent<PlayerController>();
             if (p != null)
             {
-                var ev = Schedule<PlayerEnteredVictoryZone>();
-                ev.victoryZone = this;
+                // Move player to the specified coordinates
+                p.transform.position = new Vector2(-3.67f, -11.67f);
             }
         }
     }
