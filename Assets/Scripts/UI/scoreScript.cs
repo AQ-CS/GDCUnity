@@ -15,6 +15,6 @@ public class scoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text= scoreV.ToString();
+        score.text= "Diamonds Collected: " + scoreV.ToString();
     }
 }
